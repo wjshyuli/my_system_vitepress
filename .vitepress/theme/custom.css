@@ -1,0 +1,206 @@
+/* =========================
+   Hero 主标题
+========================= */
+
+.VPHero .name {
+  background: linear-gradient(
+    120deg,
+    #3b82f6 20%,
+    #6366f1 80%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  font-weight: 800 !important;
+}
+
+/* Hero 副标题 */
+.VPHero .text {
+  font-weight: 700;
+}
+
+/* Hero 描述 */
+.VPHero .tagline {
+  font-size: 18px;
+  color: var(--vp-c-text-2);
+}
+
+/* Hero 背景柔光 */
+.VPHero {
+  position: relative;
+}
+
+.VPHero::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59,130,246,.10), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(99,102,241,.08), transparent 35%);
+
+  filter: blur(60px);
+
+  z-index: -1;
+}
+
+/* =========================
+   首页 Feature 卡片
+========================= */
+.VPFeature {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  /* 半透明磨砂 */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.32)
+    );
+
+  /* 边缘高光 */
+  border: 1px solid rgba(255,255,255,.28);
+
+  /* 毛玻璃 */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
+
+  /* 基础阴影 */
+  box-shadow:
+    0 8px 32px rgba(15,23,42,.08),
+
+    /* 柔和蓝光 */
+    0 0 0 rgba(59,130,246,0);
+}
+
+/* 顶部柔光 */
+.VPFeature::before {
+  content: '';
+
+  position: absolute;
+
+  top: -80px;
+  right: -80px;
+
+  width: 180px;
+  height: 180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99,102,241,.18),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* 底部柔光 */
+.VPFeature::after {
+  content: '';
+
+  position: absolute;
+
+  bottom: -100px;
+  left: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,.14),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* hover */
+.VPFeature:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(99,102,241,.22);
+
+  box-shadow:
+    0 16px 40px rgba(15,23,42,.12),
+
+    /* hover 发光 */
+    0 0 24px rgba(99,102,241,.10);
+}
+
+/* 标题 */
+.VPFeature .title {
+  position: relative;
+  z-index: 2;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  margin-bottom: 14px;
+
+  color: #0f172a;
+}
+
+/* 描述 */
+.VPFeature .details {
+  position: relative;
+  z-index: 2;
+
+  line-height: 1.8;
+  font-size: 15px;
+
+  color: #475569;
+}
+
+/* icon */
+.VPFeature .icon {
+  position: relative;
+  z-index: 2;
+
+  font-size: 30px;
+
+  margin-bottom: 18px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(99,102,241,.18));
+}
+
+/* 深色模式 */
+.dark .VPFeature {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30,41,59,.72),
+      rgba(15,23,42,.82)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.28);
+}
+
+.dark .VPFeature .title {
+  color: #f8fafc;
+}
+
+.dark .VPFeature .details {
+  color: #cbd5e1;
+}
