@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Jodoo系统操作说明",
   description: "一个vitepress",
-  base: '/my_system_vitepress/'
+  base: '/my_system_vitepress/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
