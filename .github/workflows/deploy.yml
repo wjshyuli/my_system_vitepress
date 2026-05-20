@@ -3,6 +3,7 @@ name: Deploy VitePress site to Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,21 +22,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ✅ Node LTS（最稳）
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: npm
 
+      # ✅ 安装依赖（CI 推荐用 ci）
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
+      # ✅ 构建 VitePress
       - name: Build VitePress
         run: npm run docs:build
 
+      # ✅ 初始化 GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # ✅ 上传构建产物
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -43,7 +49,6 @@ jobs:
 
   deploy:
     needs: build
-
     runs-on: ubuntu-latest
 
     environment:
@@ -51,6 +56,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
