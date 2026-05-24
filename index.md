@@ -6,9 +6,9 @@ hero:
   name: "信息化系统操作说明"
   text: "管理员版本"
   tagline: 一个文档站点
-  image:
-    src: /temp/背景.svg
-    alt: 背景图
+  # image:
+  #   src: /temp/背景.svg
+  #   alt: 背景图
 
   # actions:
   #   - theme: brand
