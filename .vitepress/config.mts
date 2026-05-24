@@ -10,8 +10,8 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '目录', items:[
-        {text:'Jodoo使用手册',link: 'https://help.jodoo.com/zh-TW/'},
-        {text:'简道云快速入门',link: 'https://hc.jiandaoyun.com/doc/9001'},
+        {text:'Jodoo使用手册',link:'https://help.jodoo.com/zh-TW/'},
+        {text:'简道云快速入门',link:'https://hc.jiandaoyun.com/doc/9001'},
         
 
       ] }
